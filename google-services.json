@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "12424197806",
+    "firebase_url": "https://togther-19e15.firebaseio.com",
+    "project_id": "togther-19e15",
+    "storage_bucket": "togther-19e15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12424197806:android:78c2a6326e378584",
+        "android_client_info": {
+          "package_name": "com.example.raz.togther"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12424197806-and8vjj0u84tdag6opqe3mtt6oi4cheg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiopedRWossLRO2BT7zKAU551Wn-FbZ94"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

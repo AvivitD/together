@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="background">@color/color_activity_bar</item>
+        <!-- Any customizations for your app running on pre-3.0 devices here -->
+    </style>
+</resources>

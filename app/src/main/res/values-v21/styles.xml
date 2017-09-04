@@ -1,0 +1,16 @@
+<resources>>
+            <style name="AppTheme.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+            <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+            <item name="android:statusBarColor">@android:color/transparent</item>
+        </style>
+
+    <style name="myTimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersTextColor">#ff2d6073</item>
+        <item name="android:headerBackground">@color/background</item>
+        <item name="android:colorAccent">#ff2d6073</item>
+        <item name="android:numbersSelectorColor">#ff2d6073</item>
+        <item name="android:numbersBackgroundColor">#ffdddddd</item>
+    </style>
+</resources>

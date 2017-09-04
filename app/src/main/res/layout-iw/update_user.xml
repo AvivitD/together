@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/update_user_title"
+        android:layout_margin="@dimen/small_margin" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Medium Text"
+            android:id="@+id/update_user_content"
+            android:layout_margin="@dimen/small_margin" />
+
+    </LinearLayout>
+
+    <ViewSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_user_switcher" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/update_user_btn_container" >
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/updates_new_user_child_text"
+                android:id="@+id/update_user_approve_child_btn"
+                android:layout_margin="@dimen/small_meduim_margin"
+                android:background="@drawable/button_style_4"
+                android:paddingRight="@dimen/meduim_margin"
+                android:paddingLeft="@dimen/meduim_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/updates_new_user_psycho_text"
+                android:id="@+id/update_user_approve_psycho_btn"
+                android:layout_margin="@dimen/small_meduim_margin"
+                android:background="@drawable/button_style_4"
+                android:paddingRight="@dimen/meduim_margin"
+                android:paddingLeft="@dimen/meduim_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/updates_new_user_manager_text"
+                android:id="@+id/update_user_approve_manager_btn"
+                android:layout_margin="@dimen/small_meduim_margin"
+                android:background="@drawable/button_style_4"
+                android:paddingRight="@dimen/meduim_margin"
+                android:paddingLeft="@dimen/meduim_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/update_user_approved_text" />
+        </LinearLayout>
+    </ViewSwitcher>
+</LinearLayout>

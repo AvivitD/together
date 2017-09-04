@@ -1,0 +1,125 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weallone.raz.together.Fragments.Calender"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tyczj.extendedcalendarview.ExtendedCalendarView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/app_calender" />
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:divider="@drawable/list_divide"
+            android:dividerHeight="15.0sp"
+            android:id="@+id/app_calender_listview_events" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/app_calendar_add_event"
+            fab:fab_icon="@drawable/plus"
+            fab:fab_colorNormal="@color/lightGreen"
+            fab:fab_colorPressed="@color/half_yellow"
+            android:visibility="invisible"
+            android:layout_gravity="left" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/app_calender_timepicker_container"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/very_very_large_margin"
+            android:layout_marginBottom="@dimen/very_very_large_margin"
+            android:layout_marginLeft="@dimen/large_margin"
+            android:layout_marginRight="@dimen/large_margin">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/background_style_5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/start_text"
+                    android:gravity="center_horizontal" />
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    android:id="@+id/app_calender_timepicker_start"
+                    android:scaleX="0.80"
+                    android:scaleY="0.80">
+                </TimePicker>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/end_text"
+                    android:gravity="center_horizontal" />
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    android:id="@+id/app_calender_timepicker_end"
+                    style="@style/Theme.AppCompat.Light.Dialog"
+                    android:scaleX="0.80"
+                    android:scaleY="0.80">
+                </TimePicker>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_shift"
+                    android:layout_margin="@dimen/small_margin"
+                    android:id="@+id/app_calendar_add_shift_btn"
+                    android:background="@drawable/button_style_1" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/google_calendar_textview" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "797594541846",
+    "firebase_url": "https://together-169718.firebaseio.com",
+    "project_id": "together-169718",
+    "storage_bucket": "together-169718.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797594541846:android:278c31cd1516d8f1",
+        "android_client_info": {
+          "package_name": "com.weallone.raz.together"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797594541846-u8ec2nhg68acnf4nrqnf0c11fnsgde0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUMtQH2VaXKuRKtaxjQLCV2n2LKw_xV7Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797594541846-u8ec2nhg68acnf4nrqnf0c11fnsgde0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_activity_bar">#3caf2e</color>
+    <color name="colorBackgroundStart">#40F756</color>
+    <color name="lightGreen">#3ee452</color>
+    <color name="colorBackgroundEndBlue">#3A40F0</color>
+    <color name="dark_blue">#2F334A</color>
+    <color name="traincat">#4DE8E5</color>
+    <color name="half_yellow">#bebe94</color>
+    <color name="yellow">#ffff54</color>
+    <color name="yellow_semi_transparent">#b2ffff54</color>
+    <color name="red">#FF0D00</color>
+    <color name="transpernt">#aaaaaa</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#808080</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+    <color name="transparency_pleca">#80738ffe</color>
+    <color name="main_background">#8016f7ff</color>
+    <color name="main_orange">#80f4c061</color>
+    <color name="white_semi_transparent">#dbffffff</color>
+    <color name="search_color_post">#ff14d0</color>
+    <color name="psychologist_name">#cf21ff</color>
+    <color name="developer_name">#e84d4d</color>
+    <color name="lightBlue">#8d8bfc</color>
+    <color name="default_background_color">#e84d4d</color>
+    <color name="blue_grey">#607d8b</color>
+    <color name="emphasis">#31b6e7</color>
+</resources>

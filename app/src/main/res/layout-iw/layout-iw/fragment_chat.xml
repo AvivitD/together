@@ -1,0 +1,260 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_style_10"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context="com.weallone.raz.together.Fragments.Chat">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/small_meduim_padding"
+            android:id="@+id/chat_list"
+            android:layout_weight="2"
+            android:visibility="visible"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5.0sp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:minHeight="150dp"
+            android:layout_weight="11"
+            android:layout_gravity="bottom"
+            android:isScrollContainer="false">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chat__add_file"
+                android:background="@drawable/add_file"
+                android:layout_weight="11"
+                android:layout_marginTop="@dimen/meduim_margin"
+                android:layout_marginBottom="@dimen/meduim_margin"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/small_margin"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:visibility="gone" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/chat_user_input_textbox"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="@dimen/small_meduim_padding"
+                android:background="@drawable/edittext"
+                android:layout_weight="3"
+                android:hint="@string/message"
+                android:minHeight="50dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chat_user_submit"
+                android:layout_marginBottom="@dimen/small_meduim_padding"
+                android:layout_marginRight="@dimen/small_meduim_padding"
+                android:layout_marginTop="@dimen/small_meduim_padding"
+                android:layout_gravity="bottom|right"
+                android:layout_weight="10"
+                android:background="@drawable/send"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/loading"
+        android:id="@+id/chat_pending_texview"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/chat_addition_panel"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_link"
+                android:id="@+id/chat_add_link"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/button_style_3"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_image"
+                android:id="@+id/chat_add_image"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/button_style_3"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_margin="@dimen/large_margin"
+        android:id="@+id/chat_add_link_layout"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a799f7">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chat_add_link_edittext"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_meduim_margin" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/choose"
+                android:id="@+id/chat_add_link_btn"
+                android:layout_weight="3" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/search_chat_icon"
+        fab:fab_icon="@drawable/mindeglasses"
+        fab:fab_colorNormal="@color/lightGreen"
+        fab:fab_colorPressed="@color/half_yellow"
+        android:layout_gravity="top"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chat_search_child_container"
+        android:layout_marginTop="@dimen/very_large_margin"
+        android:layout_marginBottom="@dimen/very_large_margin"
+        android:layout_marginLeft="@dimen/large_margin"
+        android:layout_marginRight="@dimen/large_margin"
+        android:background="@drawable/background_style_9"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/chat_children_text"
+            android:id="@+id/queue_label"
+            android:layout_marginTop="@dimen/small_meduim_margin"
+            android:textColorLink="#142194"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/chat_sort_by_lastChildrenComment"
+                android:id="@+id/chat_sort_children_by_child_btn"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/button_style_4"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/chat_sort_by_lastPsychologistComment"
+                android:id="@+id/chat_sort_children_by_psycho_btn"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/button_style_4"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/chat_specific_child"
+                android:id="@+id/chat_get_specific_child_btn"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/button_style_4"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:background="@color/black_semi_transparent"
+            android:layout_marginTop="@dimen/small_padding" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/chat_search_specific_layout"
+            android:visibility="gone"
+            android:padding="@dimen/small_meduim_margin">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/child_name"
+                android:background="@drawable/edittext_style_1"
+                android:id="@+id/chat_search_child_edittext"
+                android:layout_weight="5" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_style_4"
+                android:text="@string/choose"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_meduim_margin"
+                style="?android:attr/buttonStyleSmall"
+                android:id="@+id/chat_search_specific_btn" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00e60d0d" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chat_children_layout"></LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

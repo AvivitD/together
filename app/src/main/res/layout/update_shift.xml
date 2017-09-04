@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Shift Update - Dina"
+        android:id="@+id/update_shift_title"
+        android:layout_margin="@dimen/small_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="12/3/17"
+        android:id="@+id/update_shift_day"
+        android:layout_margin="@dimen/small_margin" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Start: 12:00"
+        android:id="@+id/update_shift_start"
+        android:layout_margin="@dimen/small_margin" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="End: 18:00"
+        android:id="@+id/update_shift_end"
+        android:layout_margin="@dimen/small_margin" />
+
+    <ViewSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_shift_switcher" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/update_shift_btns_container">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/approve"
+                android:id="@+id/update_shift_approve"
+                android:layout_margin="@dimen/small_meduim_margin"
+                android:background="@drawable/button_style_4"
+                android:paddingRight="@dimen/meduim_margin"
+                android:paddingLeft="@dimen/meduim_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/disapprove"
+                android:id="@+id/update_shift_disapprove"
+                android:layout_margin="@dimen/small_meduim_margin"
+                android:background="@drawable/button_style_4"
+                android:paddingRight="@dimen/meduim_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin"
+                android:paddingLeft="@dimen/meduim_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/update_shift_approve_text" />
+        </LinearLayout>
+    </ViewSwitcher>
+</LinearLayout>

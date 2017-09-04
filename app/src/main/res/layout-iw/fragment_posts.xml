@@ -1,0 +1,352 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weallone.raz.together.Fragments.Posts"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:picker="http://schemas.android.com/apk/res-auto">
+
+    <ViewSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/posts_switcher">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/posts_scrollView" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:id="@+id/posts_layout"/>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"></LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Switch
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:id="@+id/switch_public"
+                            android:text="@string/public_text"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/check_title_edittext"
+                                android:layout_weight="1"
+                                android:hint="@string/title"
+                                android:includeFontPadding="false"
+                                android:layout_margin="@dimen/small_meduim_padding" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/small_padding">
+
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/post_choose_color"
+                                    android:layout_weight="4"
+                                    android:background="@drawable/button_style_3"
+                                    android:text="@string/background_color"
+                                    android:padding="@dimen/small_padding"
+                                    android:layout_margin="@dimen/small_margin" />
+
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/post_add_image"
+                                    android:layout_weight="4"
+                                    android:background="@drawable/button_style_3"
+                                    android:text="@string/add_image"
+                                    android:padding="@dimen/small_padding"
+                                    android:layout_margin="@dimen/small_margin" />
+
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/post_add_link"
+                                    android:layout_weight="4"
+                                    android:background="@drawable/button_style_3"
+                                    android:text="@string/add_link"
+                                    android:padding="@dimen/small_padding"
+                                    android:layout_margin="@dimen/small_margin" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/check_msg_edittext"
+                                    android:hint="@string/message"
+                                    android:layout_margin="@dimen/small_meduim_padding" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/submit"
+                                android:textStyle="bold"
+                                android:id="@+id/check_send_btn"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_style_2"
+                                android:layout_margin="@dimen/small_padding" />
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/back"
+                                android:id="@+id/new_post_back_btn"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_style_2"
+                                android:layout_margin="@dimen/small_padding" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"></LinearLayout>
+
+        </LinearLayout>
+
+    </ViewSwitcher>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/action_bars_container"
+        android:layout_gravity="left">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/search_post_icon"
+            fab:fab_icon="@drawable/mindeglasses"
+            fab:fab_colorNormal="@color/lightGreen"
+            fab:fab_colorPressed="@color/half_yellow"
+            android:layout_gravity="top"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/queue_post_icon"
+            fab:fab_icon="@drawable/queue"
+            fab:fab_colorNormal="@color/lightBlue"
+            fab:fab_colorPressed="@color/half_yellow"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/new_post_icon"
+                fab:fab_icon="@drawable/ic_fab_star"
+                fab:fab_colorNormal="@color/yellow"
+                fab:fab_colorPressed="@color/half_yellow"
+                android:gravity="bottom"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50_dp"
+        android:layout_marginLeft="@dimen/very_large_margin"
+        android:layout_marginRight="@dimen/large_margin"
+        android:layout_marginTop="@dimen/small_meduim_margin"
+        android:id="@+id/post_search_box"
+        android:textSize="@dimen/large_text"
+        android:textColor="@color/dark_blue"
+        android:background="@drawable/background_style_7"
+        android:layout_gravity="top|center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/very_large_margin"
+        android:orientation="vertical"
+        android:id="@+id/choose_color_container"
+        android:visibility="invisible">
+
+        <com.github.danielnilsson9.colorpickerview.view.ColorPickerView
+            android:id="@+id/post_view__color_picker_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            picker:alphaChannelVisible="true" />
+        <Button
+            android:layout_margin="@dimen/large_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/post_color_post_choosen_btn"
+            android:text="@string/choose"
+            android:background="@drawable/background_style_2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/queue_layout_container"
+        android:visibility="invisible"
+        android:layout_margin="@dimen/very_very_large_margin"
+        android:background="@drawable/background_style_9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/queue_text"
+            android:id="@+id/queue_label"
+            android:layout_margin="@dimen/small_meduim_margin"
+            android:textColorLink="#142194"
+            android:textStyle="bold|italic"
+            android:padding="@dimen/small_padding" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/queue_layout"></LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_margin="@dimen/large_margin"
+        android:id="@+id/post_add_link_layout"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a799f7">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_add_link_edittext"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/small_meduim_margin" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/choose"
+                android:id="@+id/post_add_link_btn"
+                android:layout_weight="3" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:id="@+id/post_loading_textview"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+</FrameLayout>

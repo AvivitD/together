@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item-->
+        <!--android:id="@+id/menu_main"-->
+        <!--android:title="@string/menu_main_title"-->
+        <!--app:showAsAction="always"-->
+        <!--app:actionLayout="@layout/menu_main_user_item"/>-->
+    <item
+        android:id="@+id/reset_account_btn"
+        android:icon="@drawable/check"
+        android:title="@string/reset_account"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_choose_account"
+        android:icon="@drawable/check"
+        android:title="@string/choose_account"
+        android:showAsAction="ifRoom"/>
+
+</menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="child_registration_btn" type="id">child_registration_btn</item>
+    <item name="psycho_registration_btn" type="id">psycho_registration_btn</item>
+    <item name="manager_registration_btn" type="id">manager_registration_btn</item>
+</resources>

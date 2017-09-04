@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="QTheme" parent="android:Theme.Light">
+        <item name="android:windowBackground">@color/q_green</item>
+        <item name="android:colorBackground">@color/q_green</item>
+        <item name="android:textViewStyle">@style/QText</item>
+    </style>
+
+    <color name="q_green">#008000</color>
+    <color name="white">#FFFFFF</color>
+
+    <style name="QText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:background">@color/transparency_pleca</item>
+        <item name="android:indeterminateDrawable">@drawable/circular_progress_dialog</item>
+    </style>
+    <style name="sectionHeader"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:drawableBottom">@drawable/section_header</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/emphasis</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Theme.MyTheme.TimePicker" parent="android:Widget.Material.Light.TimePicker" tools:targetApi="lollipop">
+        <item name="android:timePickerMode">clock</item>
+        <item name="android:headerBackground">#ff555555</item>
+        <item name="android:numbersSelectorColor">?android:attr/colorControlActivated</item>
+        <item name="android:numbersBackgroundColor">#ff555555</item>
+        <item name="android:amPmTextColor">?android:attr/textColorSecondary</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\day_view.xml",
+        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\layout\\day_view.xml"
+    },
+    {
+        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\day_of_week.xml",
+        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\layout\\day_of_week.xml"
+    },
+    {
+        "merged": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/res/merged/androidTest/debug/layout/day_view.xml",
+        "source": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/bundles/debug/res/layout/day_view.xml"
+    },
+    {
+        "merged": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/res/merged/androidTest/debug/layout/day_of_week.xml",
+        "source": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/bundles/debug/res/layout/day_of_week.xml"
+    }
+]
