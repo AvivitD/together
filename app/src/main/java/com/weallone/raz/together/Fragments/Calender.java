@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -138,16 +139,20 @@ public class Calender extends Fragment implements TabAbleFragment, Cookied, View
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        setHasOptionsMenu(false);
-        View view = inflater.inflate(R.layout.fragment_calender, container, false);
-        SetSharedPrefences();
-        initUI(view);
-        InitCal();
-        setGoogleAPI(view);
-        setFireBase();
+        Activity activity = getActivity();
+        if(activity != null){
+            setHasOptionsMenu(false);
+            View view = inflater.inflate(R.layout.fragment_calender, container, false);
+            SetSharedPrefences();
+            initUI(view);
+            InitCal();
+            setGoogleAPI(view);
+            setFireBase();
 //        clearChatLabels();
-        finisCreatingView = true;
-        return view;
+            finisCreatingView = true;
+            return view;
+        }
+        return null;
     }
 
     /**

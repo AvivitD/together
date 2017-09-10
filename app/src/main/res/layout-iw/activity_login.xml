@@ -120,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="גרסה 2.9 "
+            android:text="גרסה 3.0 "
             android:id="@+id/textView3"
             android:gravity="center_horizontal" />
 

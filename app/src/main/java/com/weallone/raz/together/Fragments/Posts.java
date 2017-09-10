@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -154,18 +155,22 @@ public class Posts extends Fragment implements TabAbleFragment, AsyncResponse, C
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        setHasOptionsMenu(false);
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_posts, container, false);
-        SetSharedPrefences();
-        SetUser();
-        setCookie(getResources().getString(R.string.setCookie));
-        InitUI(view);
-        InitSensors();
-        SetPainter(inflater);
-        clearChatLabels();
-        GetPosts(user, "-1", maxPostsInUpdate);
-        return view;
+        Activity activity = getActivity();
+        if(activity != null){
+            setHasOptionsMenu(false);
+            // Inflate the layout for this fragment
+            view = inflater.inflate(R.layout.fragment_posts, container, false);
+            SetSharedPrefences();
+            SetUser();
+            setCookie(getResources().getString(R.string.setCookie));
+            InitUI(view);
+            InitSensors();
+            SetPainter(inflater);
+            clearChatLabels();
+            GetPosts(user, "-1", maxPostsInUpdate);
+            return view;
+        }
+        return null;
     }
 
     /**
@@ -495,9 +500,13 @@ public class Posts extends Fragment implements TabAbleFragment, AsyncResponse, C
      * @param count - not used.
      */
     private void handleShakeEvent(int count) {
-        Toast.makeText(getActivity(), getResources().getString(R.string.loading_new_messages),
-                Toast.LENGTH_SHORT).show();
-        GetPosts(user, "-1", maxPostsInUpdate);
+        Activity activity = getActivity();
+        if(activity != null){
+            Toast.makeText(getActivity(), getResources().getString(R.string.loading_new_messages),
+                    Toast.LENGTH_SHORT).show();
+            GetPosts(user, "-1", maxPostsInUpdate);
+        }
+
     }
 
     /**

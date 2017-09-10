@@ -64,7 +64,7 @@
                     android:hint="@string/regist_email"
                     android:id="@+id/regist_email"
                     android:layout_margin="@dimen/small_margin" />
-z
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
@@ -92,13 +93,18 @@ public class Updates extends Fragment implements TabAbleFragment, AsyncResponse,
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_updates, container, false);
-        if(getActivity()==null) return view;
-        SetSharedPrefences();
-        initUI(view, inflater);
-        GetUpdates(-1, 10);
-        // Inflate the layout for this fragment
-        return view;
+        Activity activity = getActivity();
+        if(activity != null) {
+
+            View view = inflater.inflate(R.layout.fragment_updates, container, false);
+            if (getActivity() == null) return view;
+            SetSharedPrefences();
+            initUI(view, inflater);
+            GetUpdates(-1, 10);
+            // Inflate the layout for this fragment
+            return view;
+        }
+        return null;
     }
 
     /**

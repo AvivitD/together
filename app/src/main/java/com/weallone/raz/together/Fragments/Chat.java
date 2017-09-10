@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -152,19 +153,23 @@ public class Chat extends Fragment implements TabAbleFragment, Callback, View.On
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
-        Log.d(TAG,"onCreateView()");
-        View view = inflater.inflate(R.layout.fragment_chat, container, false);
-        this.inflater = inflater;
-        SetSharedPrefences();
-        setFireBase();
-        InitUI(view);
-        InitSensors();
-        InitList();
-        InitMessages();
-        setConversationIfExists();
+        Activity activity = getActivity();
+        if(activity != null){
+            setHasOptionsMenu(true);
+            Log.d(TAG,"onCreateView()");
+            View view = inflater.inflate(R.layout.fragment_chat, container, false);
+            this.inflater = inflater;
+            SetSharedPrefences();
+            setFireBase();
+            InitUI(view);
+            InitSensors();
+            InitList();
+            InitMessages();
+            setConversationIfExists();
 //        OpenBackgroundThread();
-        return view;
+            return view;
+        }
+        return null;
     }
 
     /**

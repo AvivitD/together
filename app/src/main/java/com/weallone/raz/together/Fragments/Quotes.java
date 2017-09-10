@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -104,14 +105,18 @@ public class Quotes extends Fragment implements TabAbleFragment, AsyncResponse, 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_qoutes, container, false);
-        SetSharedPrefences();
-        InitUI(view);
-        InitPainter(inflater);
-        GetQuotes();
-        clearChatLabels();
-        // Inflate the layout for this fragment
-        return view;
+        Activity activity = getActivity();
+        if(activity != null){
+            View view = inflater.inflate(R.layout.fragment_qoutes, container, false);
+            SetSharedPrefences();
+            InitUI(view);
+            InitPainter(inflater);
+            GetQuotes();
+            clearChatLabels();
+            // Inflate the layout for this fragment
+            return view;
+        }
+        return null;
     }
 
     /**
@@ -340,12 +345,15 @@ public class Quotes extends Fragment implements TabAbleFragment, AsyncResponse, 
      * Request for getting the quotes from server.
      */
     private void SendReadingQoutes() {
-        String key = getResources().getString(R.string.key_reading_quotes);
-        GetEntity getEntity = new GetEntity(this,key,this,
-                getResources().getString(R.string.getcookie),
-                getResources().getString(R.string.setCookie));
-        String readingQuotesUrl = getResources().getString(R.string.request_reading_qoutes_url);
-        getEntity.execute(new String[]{readingQuotesUrl});
+        Activity activity = getActivity();
+        if(activity != null) {
+            String key = getResources().getString(R.string.key_reading_quotes);
+            GetEntity getEntity = new GetEntity(this, key, this,
+                    getResources().getString(R.string.getcookie),
+                    getResources().getString(R.string.setCookie));
+            String readingQuotesUrl = getResources().getString(R.string.request_reading_qoutes_url);
+            getEntity.execute(new String[]{readingQuotesUrl});
+        }
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -84,19 +85,24 @@ public class Tabs3_Container extends Fragment implements View.OnClickListener, V
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        FragmentsCreator creator = (FragmentsCreator) getArguments().
-                getSerializable(getResources().getString(R.string.fragment_creator_key));
-        SetSharedPrefences();
-        this.creator = creator;
-        View view = inflater.inflate(R.layout.fragment_tab3__container, container, false);
-        InitUI(view);
-        mySectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), labels,
-                lines,getContext(),creator);
-        viewPager = (ViewPager) view.findViewById(R.id.tab3_cfp_container);
-        viewPager.setAdapter(mySectionsPagerAdapter);
-        viewPager.setOnPageChangeListener(this);
-        setLastFragmentAppear();
-        return view;
+        Activity activity = getActivity();
+        if(activity != null){
+
+            FragmentsCreator creator = (FragmentsCreator) getArguments().
+                    getSerializable(getResources().getString(R.string.fragment_creator_key));
+            SetSharedPrefences();
+            this.creator = creator;
+            View view = inflater.inflate(R.layout.fragment_tab3__container, container, false);
+            InitUI(view);
+            mySectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), labels,
+                    lines,getContext(),creator);
+            viewPager = (ViewPager) view.findViewById(R.id.tab3_cfp_container);
+            viewPager.setAdapter(mySectionsPagerAdapter);
+            viewPager.setOnPageChangeListener(this);
+            setLastFragmentAppear();
+            return view;
+        }
+        return null;
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.weallone.raz.together.Fragments;
 
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -110,11 +111,15 @@ public class Statistics extends Fragment implements TabAbleFragment, AsyncRespon
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_statistics, container, false);
-        this.inflator = inflater;
-        SetSharedPrefences();
-        initUI(view);
-        return view;
+        Activity activity = getActivity();
+        if(activity != null){
+            View view = inflater.inflate(R.layout.fragment_statistics, container, false);
+            this.inflator = inflater;
+            SetSharedPrefences();
+            initUI(view);
+            return view;
+        }
+        return null;
     }
 
     /**

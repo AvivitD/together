@@ -6,6 +6,11 @@ package com.weallone.raz.together.Enums;
 public class CAccount {
     Account acount;
 
+    @Override
+    public int hashCode() {
+        return acount.toString().hashCode();
+    }
+
     /**
      * Construcot
      * @param val - init desired
