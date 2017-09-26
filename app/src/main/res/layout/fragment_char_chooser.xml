@@ -1,126 +1,118 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.weallone.raz.together.Fragments.CharChooser">
 
-    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.weallone.raz.together.Fragments.CharChooser"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/small_margin">
+
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_alignParentTop="true"
+        android:layout_weight="3"
+        android:id="@+id/linearLayout">
 
-        <RelativeLayout
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/char_chooser_gender"
+            android:id="@+id/char_chooser_gender" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/char_chooser_type"
+            android:id="@+id/char_chooser_type" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/char_chooser_face"
+            android:id="@+id/char_chooser_face" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/char_chooser_shirt_hair"
+            android:id="@+id/textView8" />
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:layout_margin="@dimen/small_margin"
-                android:id="@+id/linearLayout">
-
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/char_chooser_gender"
-                    android:id="@+id/char_chooser_gender" />
-
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/char_chooser_type"
-                    android:id="@+id/char_chooser_type" />
-
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/char_chooser_face"
-                    android:id="@+id/char_chooser_face" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/char_chooser_shirt_hair"
-                    android:id="@+id/textView8" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <RadioGroup
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/char_chooser_radiogroup_shirt">
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_shirt_1"
-                            android:checked="true" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_shirt_2" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_shirt_3" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_shirt_4" />
-                    </RadioGroup>
-
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/char_chooser_radiogroup_hair">
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_hair_1"
-                            android:checked="true" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_hair_2" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_hair_3" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/char_chooser_radio_hair_4" />
-                    </RadioGroup>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <ImageView
+            <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/char_chooser_image"
-                android:layout_gravity="top"
-                android:src="@drawable/sad_boy1_blue_black"
-                android:layout_weight="1"
-                android:layout_alignBottom="@+id/linearLayout"
-                android:layout_marginRight="@dimen/very_large_margin"
-                android:layout_alignTop="@+id/linearLayout" />
+                android:layout_height="match_parent"
+                android:id="@+id/char_chooser_radiogroup_shirt">
 
-        </RelativeLayout>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_shirt_1"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_shirt_2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_shirt_3" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_shirt_4" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/char_chooser_radiogroup_hair">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_hair_1"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_hair_2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_hair_3" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_chooser_radio_hair_4" />
+            </RadioGroup>
+        </LinearLayout>
+
     </LinearLayout>
-</FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/char_chooser_image"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:src="@drawable/sad_boy1_blue_black"
+        />
+
+</RelativeLayout>
+

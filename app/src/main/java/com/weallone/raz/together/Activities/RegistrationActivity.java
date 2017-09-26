@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.weallone.raz.together.AsyncTasks.GetEntity;
 import com.weallone.raz.together.AsyncTasks.SendUser;
@@ -41,15 +40,15 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
 
     private static final String TAG = "RegistrationActivity";
     private SharedPreferences settings;
-    private EditText firstNameEditText = null;
-    private EditText lastNameEditText = null;
-    private EditText emailEditText = null;
+    private EditText userEditText = null;
+    private TextView userName = null;
     private EditText passEditText = null;
     private Boolean validEmail = false;
     private Button submitBtn = null;
     private String entity = null;
     private String token = null;
-    private TextView exitText = null;
+    private String name;
+    //private TextView exitText = null;
 
     private View.OnFocusChangeListener emailListener = null;
     private View.OnFocusChangeListener passsListener = null;
@@ -94,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus) return;
-                CheckIfEmailExists(emailEditText.getText().toString());
+                CheckIfEmailExists(userEditText.getText().toString());
             }
         };
         passsListener = new View.OnFocusChangeListener() {
@@ -107,8 +106,6 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
                 }
             }
         };
-
-
     }
 
     /**
@@ -116,6 +113,7 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
      * @param email - to check
      */
     private void CheckIfEmailExists(String email) {
+        email += "@gmail.com";//adding postfix gmail.com for relaxing registration.
         String key = getResources().getString(R.string.key_get_exists);
         GetEntity getEntity = new GetEntity(this,key,this,
                 getResources().getString(R.string.getcookie),
@@ -146,23 +144,24 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
         SetCharFragment();
         String firstName = getIntent().getStringExtra(getResources().getString(R.string.key_first_name));
         String lastName = getIntent().getStringExtra(getResources().getString(R.string.key_last_name));
-        firstNameEditText = (EditText) findViewById(R.id.regist_first_name);
-        lastNameEditText = (EditText) findViewById(R.id.regist_last_name);
-        emailEditText = (EditText) findViewById(R.id.regist_email);
+        name = (firstName != null ? firstName  : "") + (lastName != null ? " " + lastName : "");
+        userEditText = (EditText) findViewById(R.id.regist_user);
         passEditText = (EditText) findViewById(R.id.regist_password);
         submitBtn = (Button) findViewById(R.id.regist_submit_btn);
-        exitText = (TextView) findViewById(R.id.regist_exit);
+        //exitText = (TextView) findViewById(R.id.regist_exit);
+        userName = (TextView) findViewById(R.id.username);
+        userName.setText(name);
 
-        exitText.setOnClickListener(new View.OnClickListener() {
+        /*exitText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 intent.putExtra(getResources().getString(R.string.check_approve), false);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        emailEditText.addTextChangedListener(new TextWatcher() {
+        userEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -175,26 +174,28 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
 
             @Override
             public void afterTextChanged(Editable s) {
-                CheckIfEmailExists(emailEditText.getText().toString());
+                CheckIfEmailExists(userEditText.getText().toString());
             }
         });
         pullDataFromIntent();
 
-        if(firstNameEditText!=null && firstName !=null) firstNameEditText.setText(firstName);
-        if(lastNameEditText!=null && lastName !=null) lastNameEditText.setText(lastName);
-        emailEditText.setOnFocusChangeListener(emailListener);
+        userEditText.setOnFocusChangeListener(emailListener);
         passEditText.setOnFocusChangeListener(passsListener);
         submitBtn.setOnClickListener(this);
     }
 
     private void pullDataFromIntent() {
         Intent intent = getIntent();
+        String firstName = "";
+        String lastName = "";
         if(intent.hasExtra(getResources().getString(R.string.key_user_first_name))){
-            firstNameEditText.setText(intent.getStringExtra(getResources().getString(R.string.key_user_first_name)));
+            firstName = intent.getStringExtra(getResources().getString(R.string.key_user_first_name));
         }
         if(intent.hasExtra(getResources().getString(R.string.key_user_last_name))){
-            lastNameEditText.setText(intent.getStringExtra(getResources().getString(R.string.key_user_last_name)));
+            lastName = intent.getStringExtra(getResources().getString(R.string.key_user_last_name));
         }
+        name = (firstName != null ? firstName  : "") + (lastName != null ? " " + lastName : "") + "!";
+
         if(intent.hasExtra(getResources().getString(R.string.key_entity))){
             entity = intent.getStringExtra(getResources().getString(R.string.key_entity));
         }
@@ -225,7 +226,7 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
                 Log.d(TAG, result);
                 if(result.startsWith(getResources().getString(R.string.regist_exits))){
                     validEmail = false;
-                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.regist_this_email_is_regist),
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.regist_this_user_is_regist),
                             Toast.LENGTH_SHORT).show();
                 } else if(result.startsWith(getResources().getString(R.string.regists_not_exists))){
                     Log.d(TAG + "$$", String.valueOf(validEmail));
@@ -297,11 +298,11 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
     public void onClick(View v) {
         Log.d(TAG + "$$", String.valueOf(validEmail));
         if(!validEmail){
-            if(!isEmailValid(emailEditText.getText().toString())){
+            if(!isEmailValid(userEditText.getText().toString()+"@gmail.com")){
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.regist_insert_valid_email),
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.regist_this_email_is_regist),
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.regist_this_user_is_regist),
                         Toast.LENGTH_SHORT).show();
             }
             return;
@@ -325,8 +326,7 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
                 getResources().getString(R.string.key_parent_email),
                 getResources().getString(R.string.key_parent_phone),
         };
-        String name = firstNameEditText.getText().toString() + " " + lastNameEditText.getText().toString();
-        String email = emailEditText.getText().toString();
+        String email = userEditText.getText().toString()+ "@gmail.com";
         String image = settings.getString(getResources().getString(R.string.key_user_character), null);
         String password = passEditText.getText().toString();
         settings.edit().putString(getResources().getString(R.string.user_pass), password);
