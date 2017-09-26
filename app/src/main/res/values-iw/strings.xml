@@ -105,7 +105,7 @@
     <string name="shift_has_been_sent">נשלח</string>
     <string name="togther_app">אפליקצית ביחד</string>
     <string name="approved">מאושר</string>
-    <string name="add_quote">צרף/פי ציטוט</string>
+    <string name="add_quote">צרף/פי פתרון</string>
     <string name="author_text">סופר</string>
     <string name="content_text">תוכן</string>
     <string name="done_text">אשר/י</string>
@@ -161,7 +161,7 @@
     <string name="char_chooser_shirt">חולצה</string>
     <string name="char_chooser_hair">שיער</string>
     <string name="char_chooser_shirt_hair">חולצה | שיער</string>
-    <string name="registration_title">ברוך/ה הבא/ה!</string>
+    <string name="registration_title">ברוך/ה הבא/ה</string>
     <string name="regist_pass">סיסמא</string>
     <string name="regist_email">אי-מייל</string>
     <string name="regist_name">שם</string>
@@ -182,7 +182,9 @@
     <string name="send_password_to_email1">\?</string>
     <string name="regist_exit">יציאה</string>
     <string name="please_insert_your_email">אנא הכנס/י את האיימיל שלך</string>
+    <string name="calendar_not_supported">לא פעיל</string>
     <string name="email_text">איי-מייל</string>
+    <string name="user_text">שם משתמש</string>
     <string name="help_msgs_label">בקשות עזרה (נענו / לא נענו):</string>
     <string name="or_and_text">ו/או</string>
     <string name="please_insert_valid_phone">אנא הכנס/י מספר פלאפון חוקי</string>
@@ -204,7 +206,7 @@
     <string name="update_fragment_label">עידכונים</string>
     <string name="managment_fragment_label">ניהול</string>
     <string name="solutions_fragment_label">פתרונות</string>
-    <string name="regist_this_email_is_regist">המייל הנ"ל רשום כבר במערכת, אנא בחר/י מייל אחר.</string>
+    <string name="regist_this_user_is_regist">היוזר הנ"ל רשום כבר במערכת, אנא בחר/י יוזר אחר.</string>
     <string name="login_prompt_message_text">היי! כרגע בקשת הרישום שלך בתהליך, אנחנו מחכים לאישור הורים. בנתיים את/ה מוזמן/ת להנות מסיור באתר שלנו:</string>
     <string name="login_prompt_message_link">אתר ביחד</string>
 </resources>

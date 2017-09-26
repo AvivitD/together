@@ -261,7 +261,7 @@
     <string name="shift_has_been_sent">Shift has been sent</string>
     <string name="key_calendar_psycho_deviceId">psycho_deviceId</string>
     <string name="fragment">fragment</string>
-    <string name="togther_app">Togther App</string>
+    <string name="togther_app">Together App</string>
     <string name="chat_fragment">chat_fragment</string>
     <string name="calendar_fragment">calendar_fragment</string>
     <string name="id">id</string>
@@ -316,6 +316,7 @@
     <string name="key_sta_child_general_info">key_sta_child_general_info</string>
     <string name="key_sta_psycho_general_info">key_sta_psycho_general_info</string>
     <string name="email_text">email</string>
+    <string name="user_text">user name</string>
     <string name="lastlogin_text">lastlogin</string>
     <string name="public_posts_published">public_posts_published</string>
     <string name="private_posts_published">private_posts_published</string>
@@ -417,17 +418,18 @@
     <string name="char_chooser_shirt">Shirt</string>
     <string name="char_chooser_hair">Hair</string>
     <string name="char_chooser_shirt_hair">Shirt | Hair</string>
-    <string name="registration_title">Welcome!</string>
+    <string name="registration_title">Welcome</string>
     <string name="key_user_character">key_user_character</string>
     <string name="regist_pass">Password</string>
     <string name="regist_email">E-mail</string>
+    <string name="regist_user">User</string>
     <string name="regist_name">Name</string>
     <string name="key_get_exists">key_get_exists</string>
     <string name="regist_exits">exists</string>
     <string name="regists_not_exists">not_exists</string>
     <string name="regist_pass_more_than">Please choose a password with at least 8 characters</string>
     <string name="regist_submit">Submit</string>
-    <string name="regist_this_email_is_regist">This email is already used</string>
+    <string name="regist_this_user_is_regist">This user name is already used</string>
     <string name="regist_insert_email">Please insert an email</string>
     <string name="regist_insert_valid_email">Please insert a valid email</string>
     <string name="key_user_first_name">key_user_first_name</string>
@@ -467,6 +469,7 @@
     <string name="send_password_to_email1">Email?</string>
     <string name="regist_exit">Exit</string>
     <string name="please_insert_your_email">Please insert your email</string>
+    <string name="calendar_not_supported">not active</string>
     <string name="email_key">email</string>
     <string name="code_key">code</string>
     <string name="key_null">key</string>
