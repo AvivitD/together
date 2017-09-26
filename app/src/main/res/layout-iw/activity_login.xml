@@ -55,6 +55,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_first_name"
+                android:nextFocusForward="@+id/login_last_names"
+                android:maxLines="1"
+                android:inputType="text"
                 android:id="@+id/login_first_name"
                 android:layout_weight="8"
                 android:layout_margin="@dimen/small_margin" />
@@ -63,6 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_last_name"
+                android:maxLines="1"
+                android:inputType="text"
                 android:id="@+id/login_last_name"
                 android:layout_weight="8"
                 android:layout_margin="@dimen/small_margin" />
@@ -73,36 +78,14 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/meduim_margin">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_hint_1"
-                android:id="@+id/login_input_email"
-                android:layout_weight="8" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/meduim_margin" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/or_and_text"
-                android:id="@+id/or_text"
-                android:layout_marginLeft="@dimen/small_meduim_margin"
-                android:layout_marginRight="@dimen/small_meduim_margin" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_hint_2"
+                android:maxLines="1"
+                android:inputType="number"
                 android:id="@+id/login_input_phone"
                 android:layout_weight="8" />
 
@@ -165,7 +148,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/login_email"
-            android:hint="@string/email_text"
+            android:hint="@string/user_text"
+            android:gravity="right"
             android:layout_margin="@dimen/small_meduim_margin" />
 
         <EditText
@@ -194,6 +178,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/forgot_password"
+            android:visibility="gone"
             android:id="@+id/login_forgot_password_text"
             android:layout_margin="@dimen/small_margin" />
 

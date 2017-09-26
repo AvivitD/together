@@ -52,7 +52,6 @@ import java.util.regex.Pattern;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AsyncResponse, Cookied {
 
     private static final String TAG = "LoginActivity";
-    private EditText inputTextEmail = null;
     private EditText inputTextPhone = null;
     private Button submitBtn = null;
     private TextView loginButton = null;
@@ -106,7 +105,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * Linking between the UI objects and defineing listerners.
      */
     private void initUI() {
-        inputTextEmail = (EditText) findViewById(R.id.login_input_email);
         inputTextPhone = (EditText) findViewById(R.id.login_input_phone);
         submitBtn = (Button) findViewById(R.id.login_send);
         loginButton = (TextView) findViewById(R.id.login_button);
@@ -237,9 +235,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         SendLogin sendLogin = new SendLogin(this,getResources().getString(R.string.key_login_exists),this,
                 getResources().getString(R.string.getcookie), getResources().getString(R.string.setCookie), this);
         String loginURL = getResources().getString(R.string.request_login_url);
-        sendLogin.execute(new LoginPack[]{new LoginPack(loginURL, new Login(emailEditText.getText().toString(),
+        String email = emailEditText.getText().toString();
+        if(!isEmailValid(email)){
+            email = email + "@gmail.com";//in this case it is a user registered with a user name only
+        }
+        sendLogin.execute(new LoginPack[]{new LoginPack(loginURL, new Login(email,
                 passEditText.getText().toString()), keys)});
     }
+
+
 
     /**
      * Representing the execution of an on-click 'sign up' action.
@@ -250,9 +254,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         if(validateInput() && !sentRequestRecently) {
             Toast.makeText(this, getResources().getString(R.string.login_request_sent), Toast.LENGTH_LONG).show();
-            if(!inputTextEmail.getText().toString().equals(getResources().getString(R.string.empty))){
-                SendRequest(getResources().getString(R.string.login_key_1), inputTextEmail.getText().toString());
-            }
             if (!inputTextPhone.getText().toString().equals(getResources().getString(R.string.empty))){
                 new Thread(new Runnable() {
                     @Override
@@ -324,21 +325,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * @return
      */
     private boolean validateInput() {
-        Boolean emptyEmail = inputTextEmail.getText().toString().trim().equals(getResources().getString(R.string.empty));
-        Boolean validEmail = isEmailValid(inputTextEmail.getText().toString());
+
         Boolean emptyPhone = inputTextPhone.getText().toString().trim().equals(getResources().getString(R.string.empty));
         Boolean validPhone = isAllNumbers(inputTextPhone.getText().toString());
 
-        if(validEmail || validPhone){
+        if(validPhone){
             return true;
-        } else if(!emptyEmail && !validEmail){
-            Toast.makeText(getApplicationContext(), getResources().getString(R.string.please_insert_valid_email),
-                    Toast.LENGTH_SHORT).show();
-        } else if(!emptyPhone && !validPhone){
+        }
+        else if(!emptyPhone && !validPhone){
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.please_insert_valid_phone),
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), getResources().getString(R.string.please_insert_valid_email),
                     Toast.LENGTH_SHORT).show();
         }
         return false;
