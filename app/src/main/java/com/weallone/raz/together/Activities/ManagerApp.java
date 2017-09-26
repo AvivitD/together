@@ -58,10 +58,10 @@ public class ManagerApp extends MyActionBarActivity implements FragmentsCreator,
     @Override
     public Fragment createFragment(int position) {
         switch(position){
-            case 0:
-                return Chat.newInstance(this);
             case 1:
-                return Calender.newInstance(this);
+                return Chat.newInstance(this);
+            case 0:
+                return Calender.newInstance(this, true);
             case 2:
                 return Posts.newInstance(this);
             default:
@@ -88,8 +88,9 @@ public class ManagerApp extends MyActionBarActivity implements FragmentsCreator,
      */
     @Override
     public void putFragmentsNames(Map<Integer, TextView> labels) {
-        labels.get(0).setText(getResources().getString(R.string.chat_label));
-        labels.get(1).setText(getResources().getString(R.string.calender_label));
+        labels.get(0).setText(getResources().getString(R.string.calender_label));
+        labels.get(1).setText(getResources().getString(R.string.chat_label));
         labels.get(2).setText(getResources().getString(R.string.posts_label));
+
     }
 }

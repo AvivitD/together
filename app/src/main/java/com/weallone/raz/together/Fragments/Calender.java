@@ -98,6 +98,11 @@ public class Calender extends Fragment implements TabAbleFragment, Cookied, View
     private Boolean finisCreatingView = false;
     private Boolean first = false;
     private Boolean shown = false;
+    private boolean isDisabled = false;
+
+    public void setDisabled(boolean disabled) {
+        isDisabled = disabled;
+    }
 
     /**
      * get method
@@ -112,8 +117,9 @@ public class Calender extends Fragment implements TabAbleFragment, Cookied, View
      * @param actionBarActivity - activity
      * @return Calendar object.
      */
-    public static Calender newInstance(MyActionBarActivity actionBarActivity){
+    public static Calender newInstance(MyActionBarActivity actionBarActivity, boolean disabled){
         Calender fragment = new Calender();
+        fragment.setDisabled(disabled);
         Bundle bundle = new Bundle();
         bundle.putSerializable(actionBarActivity.getResources().getString(R.string.key_calendar_pass_argument), (Serializable) actionBarActivity);
         fragment.setArguments(bundle);
@@ -142,15 +148,26 @@ public class Calender extends Fragment implements TabAbleFragment, Cookied, View
         Activity activity = getActivity();
         if(activity != null){
             setHasOptionsMenu(false);
-            View view = inflater.inflate(R.layout.fragment_calender, container, false);
-            SetSharedPrefences();
-            initUI(view);
-            InitCal();
-            setGoogleAPI(view);
-            setFireBase();
+
+            if(isDisabled){
+                View view = inflater.inflate(R.layout.fragment_empty, container, false);
+                finisCreatingView = true;
+                TextView message = (TextView)view.findViewById(R.id.message);
+                message.setText(getResources().getString(R.string.calendar_not_supported));
+                return view;
+            }
+            else{
+                View view = inflater.inflate(R.layout.fragment_calender, container, false);
+                SetSharedPrefences();
+                initUI(view);
+                InitCal();
+                setGoogleAPI(view);
+                setFireBase();
+                finisCreatingView = true;
+                return view;
 //        clearChatLabels();
-            finisCreatingView = true;
-            return view;
+            }
+
         }
         return null;
     }
@@ -766,7 +783,7 @@ public class Calender extends Fragment implements TabAbleFragment, Cookied, View
     @Override
     public void Shown(Boolean first) {
         Log.d(TAG, "Shown()");
-        if(!first){
+        if(!first && !isDisabled){
             syncMonthWithGoogle();
             clearChatLabels();
         }

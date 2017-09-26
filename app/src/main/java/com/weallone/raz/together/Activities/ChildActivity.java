@@ -57,9 +57,9 @@ public class ChildActivity extends MyActionBarActivity implements FragmentsCreat
     public Fragment createFragment(int position) {
         switch(position){
             case 0:
-                return Chat.newInstance(this);
-            case 1:
                 return Quotes.newInstance(this);
+            case 1:
+                return Chat.newInstance(this);
             case 2:
                 return Posts.newInstance(this);
             default:
@@ -73,8 +73,8 @@ public class ChildActivity extends MyActionBarActivity implements FragmentsCreat
      */
     @Override
     public void putFragmentsNames(Map<Integer, TextView> labels) {
-        labels.get(0).setText(getResources().getString(R.string.chat_label));
-        labels.get(1).setText(getResources().getString(R.string.support_label));
+        labels.get(0).setText(getResources().getString(R.string.support_label));
+        labels.get(1).setText(getResources().getString(R.string.chat_label));
         labels.get(2).setText(getResources().getString(R.string.posts_label));
     }
 }

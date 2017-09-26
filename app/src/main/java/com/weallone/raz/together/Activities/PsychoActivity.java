@@ -72,7 +72,7 @@ public class PsychoActivity extends MyActionBarActivity implements FragmentsCrea
             case 0:
                 return Chat.newInstance(this);
             case 1:
-                return Calender.newInstance(this);
+                return Calender.newInstance(this, false);
             case 2:
                 return Posts.newInstance(this);
             default:
