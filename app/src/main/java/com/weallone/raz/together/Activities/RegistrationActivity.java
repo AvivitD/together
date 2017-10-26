@@ -194,7 +194,7 @@ public class RegistrationActivity extends AppCompatActivity implements AsyncResp
         if(intent.hasExtra(getResources().getString(R.string.key_user_last_name))){
             lastName = intent.getStringExtra(getResources().getString(R.string.key_user_last_name));
         }
-        name = (firstName != null ? firstName  : "") + (lastName != null ? " " + lastName : "") + "!";
+        name = (firstName != null ? firstName  : "") + (lastName != null ? " " + lastName : "");
 
         if(intent.hasExtra(getResources().getString(R.string.key_entity))){
             entity = intent.getStringExtra(getResources().getString(R.string.key_entity));
