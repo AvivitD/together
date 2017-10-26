@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher2.png",
-        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher2.png"
-    },
-    {
         "merged": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/ic_launcher2.png",
         "source": "/Users/sharadir/Work/Togther/extendedCalendarView/build/intermediates/bundles/debug/res/drawable-mdpi-v4/ic_launcher2.png"
+    },
+    {
+        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher2.png",
+        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher2.png"
     }
 ]

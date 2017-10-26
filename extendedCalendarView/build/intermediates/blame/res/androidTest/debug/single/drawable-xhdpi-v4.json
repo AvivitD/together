@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\navigation_previous_item.png",
+        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\navigation_previous_item.png"
+    },
+    {
         "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\day_bg.9.png",
         "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\day_bg.9.png"
     },
@@ -18,9 +22,5 @@
     {
         "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\navigation_next_item.png",
         "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\navigation_next_item.png"
-    },
-    {
-        "merged": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\navigation_previous_item.png",
-        "source": "/Users/sharadir/Work/Togther/app/C:\\Users\\Raz\\AndroidStudioProjects\\Togther\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\navigation_previous_item.png"
     }
 ]
