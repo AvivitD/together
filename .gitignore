@@ -9,3 +9,9 @@
 .DS_Store
 /build
 /captures
+app/gradle/
+app/gradlew
+app/gradlew.bat
+keystore1
+extendedCalendarView/build/
+extendedCalendarView/build
