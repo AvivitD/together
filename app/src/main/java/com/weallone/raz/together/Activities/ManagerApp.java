@@ -61,7 +61,7 @@ public class ManagerApp extends MyActionBarActivity implements FragmentsCreator,
             case 1:
                 return Chat.newInstance(this);
             case 0:
-                return Calender.newInstance(this, true);
+                return Calender.newInstance(this, false);
             case 2:
                 return Posts.newInstance(this);
             default:
