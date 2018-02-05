@@ -21,8 +21,8 @@ android {
         applicationId "com.isreal.together"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 3
-        versionName "3.3"
+        versionCode 4
+        versionName "3.4"
     }
     buildTypes {
         release {
